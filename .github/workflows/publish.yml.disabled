@@ -1,0 +1,48 @@
+# PLANTILLA INACTIVA: GitHub no ejecuta archivos con extensión .disabled.
+# No renombrar ni configurar Pages sin autorización expresa.
+name: Publicar libro (activación futura)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.10.19"
+      - name: Probar herramientas
+        run: python3 -m unittest discover -s tests -v
+      - name: Renderizar libro
+        run: quarto render
+      - name: Validar HTML y enlaces locales
+        run: python3 scripts/check_site.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _book
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

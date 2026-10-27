@@ -1,0 +1,47 @@
+# Quarto y salidas generadas
+/.quarto/
+/_book/
+/_site/
+/_freeze/
+/.jupyter_cache/
+*.quarto_ipynb
+*_files/
+
+# Julia: conservar Project.toml y Manifest.toml cuando se creen.
+/.julia/
+*.jl.cov
+*.jl.mem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Node (si se incorpora posteriormente)
+node_modules/
+
+# macOS, editores y temporales
+.DS_Store
+._*
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+*.log
+
+# Credenciales y apuntes privados: nunca incluirlos en el sitio.
+.env
+.env.*
+!.env.example
+/privado/
+
+**/*.quarto_ipynb

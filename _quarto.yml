@@ -1,0 +1,43 @@
+project:
+  type: book
+  output-dir: _book
+
+lang: es
+
+book:
+  title: "Fundamentos de Ingeniería Mecánica"
+  subtitle: "Bloque 3 · Mecánica del Medio Continuo y Teoría de Estructuras"
+  author: "Rafael Castro Triguero"
+  description: "Máster Universitario en Ingeniería Industrial · Universidad de Córdoba"
+  favicon: assets/figures/favicon.svg
+  chapters:
+    - index.qmd
+  search: true
+  sidebar:
+    title: "FIM · Bloque 3"
+    style: docked
+    collapse-level: 2
+  page-footer:
+    center: "Universidad de Córdoba · Material en preparación · No sustituye a la guía docente oficial"
+
+format:
+  html:
+    theme: cosmo
+    css: assets/css/fim.css
+    toc: true
+    toc-title: "En esta página"
+    number-sections: false
+    code-copy: true
+    code-overflow: wrap
+    html-math-method: mathjax
+    link-external-newwindow: false
+    grid:
+      sidebar-width: 260px
+      body-width: 960px
+      margin-width: 240px
+      gutter-width: 1.5rem
+
+# La inicialización no ejecuta Julia, Python ni notebooks.
+# Al incorporar ejemplos, acordar su ejecución y reproducibilidad explícitamente.
+execute:
+  enabled: false

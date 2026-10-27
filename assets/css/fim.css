@@ -1,0 +1,124 @@
+/* Estilos originales de FIM: sin fuentes remotas ni dependencias adicionales. */
+:root {
+  --fim-ink: #17354b;
+  --fim-accent: #12665c;
+  --fim-surface: #eef5f8;
+  --fim-border: #b6cad4;
+}
+
+body {
+  line-height: 1.65;
+}
+
+main {
+  min-width: 0;
+}
+
+.fim-hero {
+  padding: clamp(1.25rem, 3vw, 2.75rem);
+  margin-block: 1rem 2.5rem;
+  border: 1px solid var(--fim-border);
+  border-left: 0.4rem solid var(--fim-accent);
+  border-radius: 0.8rem;
+  background: linear-gradient(120deg, var(--fim-surface), #fff);
+  color: var(--fim-ink);
+}
+
+.fim-hero h2 {
+  margin-top: 0.75rem;
+  border: 0;
+  font-size: clamp(1.65rem, 2.6vw, 2.5rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.fim-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.fim-status {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid var(--fim-accent);
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.fim-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.fim-card {
+  padding: 1.1rem;
+  border: 1px solid var(--fim-border);
+  border-radius: 0.6rem;
+}
+
+.fim-card h3 {
+  margin-top: 0;
+  color: var(--fim-ink);
+  font-size: 1.2rem;
+}
+
+.fim-card p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--fim-accent);
+  outline-offset: 3px;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.table {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 575.98px) {
+  .fim-hero {
+    padding: 1rem;
+    margin-block: 0.5rem 1.5rem;
+  }
+
+  .table th, .table td {
+    padding: 0.45rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .fim-hero {
+    background: white;
+  }
+
+  .fim-cards {
+    display: block;
+  }
+
+  .fim-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+}

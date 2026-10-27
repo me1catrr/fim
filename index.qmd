@@ -1,0 +1,68 @@
+---
+title: "Presentación"
+---
+
+::: {.fim-hero}
+[MÁSTER UNIVERSITARIO EN INGENIERÍA INDUSTRIAL]{.fim-eyebrow}
+
+## De los principios del continuo al análisis de estructuras {.unnumbered}
+
+**Fundamentos de Ingeniería Mecánica · Universidad de Córdoba**
+
+Bloque 3: Mecánica del Medio Continuo y Teoría de Estructuras.
+
+**Profesor:** Rafael Castro Triguero.
+
+[Base docente en preparación]{.fim-status}
+:::
+
+## Propósito
+
+Conectar los principios físicos, la formulación matemática y el cálculo
+estructural para preparar la asignatura de **Elementos Finitos de segundo
+curso del Máster**.
+
+Este repositorio contiene exclusivamente el Bloque 3. En esta fase solo
+se inicializa la infraestructura: todavía no hay capítulos, laboratorios
+ni ejercicios desarrollados.
+
+## Itinerario previsto
+
+| Bloque | Ámbito | Encaje provisional |
+|:--|:--|:--|
+| F00 | Preparación matemática y computacional | Preparación transversal; diagnóstico al inicio |
+| F01 | Tensiones, deformaciones y elasticidad lineal | Sesión 1 · 4 h |
+| F02 | Resistencia de Materiales, trabajo y energía | Sesión 2 · 4 h |
+| F03 | Método de la flexibilidad | Sesión 3 · 4 h |
+| F04 | Método matricial de rigidez | Sesión 4 · 4 h |
+| F05 | Proyecto integrador y transición conceptual al MEF | Sesión 5 · 4 h |
+
+Las **20 horas presenciales incluyen descansos**, teoría, resolución manual,
+simulaciones y programación. La distribución es provisional, no una guía
+docente oficial; la preparación transversal no añade una sexta sesión.
+
+## Cómo se aprenderá
+
+::: {.fim-cards}
+::: {.fim-card}
+### Comprender
+Principios físicos, hipótesis y formulación matemática antes de programar.
+:::
+::: {.fim-card}
+### Resolver
+Cálculo manual y laboratorios reproducibles en Julia y Python.
+:::
+::: {.fim-card}
+### Verificar
+Interpretación, unidades, equilibrio y análisis de errores.
+:::
+:::
+
+Cada sesión incorporará objetivos, tiempos con descansos, ejercicios
+autocorregibles y laboratorio computacional en una fase posterior.
+
+::: {.callout-note title="Estado del proyecto"}
+La web no está publicada en GitHub Pages. El repositorio es público, pero
+no se ha asignado todavía una licencia al código ni a los contenidos.
+Los futuros borradores generados con IA requerirán revisión del profesorado.
+:::
