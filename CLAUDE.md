@@ -162,9 +162,11 @@ No delegar revisiones científicas como si fueran aprobación del profesor.
   cuando se soliciten. No sobrescribir trabajo existente ni reescribir historia.
 - No hacer push, publicar, activar workflows ni desplegar sin autorización
   explícita. El commit y push iniciales están autorizados solo para esta fase.
-- GitHub Pages no está activado. El archivo
-  `.github/workflows/publish.yml.disabled` es una plantilla inactiva; no
-  renombrarlo ni configurar Pages sin permiso.
+- GitHub Pages no está activado. `.github/workflows/publish.yml` solo admite
+  ejecución manual desde `main` y bloquea ambos trabajos salvo que la variable
+  de repositorio `ENABLE_PAGES` sea exactamente `true`. La variable no se ha
+  habilitado. No quitar estas condiciones, habilitar la variable ni configurar
+  Pages sin permiso expreso.
 - No añadir licencias de código ni contenido sin consultar al propietario.
   Un repositorio público no implica una licencia de reutilización.
 - No versionar `_book/`, cachés, entornos, secretos ni documentos privados.

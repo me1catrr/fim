@@ -1,6 +1,7 @@
-# PLANTILLA INACTIVA: GitHub no ejecuta archivos con extensión .disabled.
-# No renombrar ni configurar Pages sin autorización expresa.
-name: Publicar libro (activación futura)
+# PUBLICACIÓN DESACTIVADA: requiere ENABLE_PAGES = "true" en las variables
+# del repositorio y ejecución manual desde main. Si falta la variable, se omite.
+# No habilitar la variable ni configurar Pages sin autorización expresa.
+name: Publicar libro en GitHub Pages
 
 on:
   workflow_dispatch:
@@ -14,6 +15,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ vars.ENABLE_PAGES == 'true' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,6 +37,7 @@ jobs:
           path: _book
   deploy:
     needs: build
+    if: ${{ vars.ENABLE_PAGES == 'true' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     permissions:
       pages: write

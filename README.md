@@ -33,7 +33,7 @@ es provisional y no desarrolla todavía el temario.
 
 ```text
 fim/
-├── .github/workflows/publish.yml.disabled
+├── .github/workflows/publish.yml
 ├── .gitignore
 ├── CLAUDE.md
 ├── README.md
@@ -124,15 +124,21 @@ No se ha copiado material de ellos y FIM no depende de esos clones.
 
 ## Publicación futura: desactivada
 
-`.github/workflows/publish.yml.disabled` es una plantilla y **GitHub Actions
-no la ejecuta**. No hay disparador por push ni despliegue activo.
+`.github/workflows/publish.yml` contiene el workflow de publicación, **bloqueado
+por condición**. Solo admite ejecución manual (`workflow_dispatch`), desde
+`main` y con la variable de repositorio `ENABLE_PAGES` igual a `true`.
+Si la variable no existe o tiene otro valor, ambos trabajos se omiten.
+No hay disparador por push ni por pull request. No se ha habilitado la variable.
 Con autorización expresa, habrá que:
 
 1. Revisar materiales, permisos y licencias antes de publicar el HTML.
-2. Revisar y renombrar la plantilla a `publish.yml`.
-3. Configurar Pages con origen GitHub Actions y comprobar la disponibilidad
-   de los artefactos de Actions para este repositorio público.
-4. Lanzar manualmente el workflow y revisar el sitio resultante.
+2. Revisar el workflow y configurar Pages con origen GitHub Actions.
+3. Crear la variable de repositorio `ENABLE_PAGES` con valor `true` en
+   Settings → Secrets and variables → Actions → Variables.
+4. Lanzar manualmente el workflow desde `main` y revisar el sitio resultante.
+
+Para volver a bloquear futuras publicaciones, eliminar la variable o cambiarla
+a `false`; esto no retira un sitio que ya se haya publicado.
 
 No se han configurado Pages, dominio ni URL de sitio publicada.
 
